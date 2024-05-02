@@ -1,9 +1,9 @@
 document.getElementById('showCoursesButton').addEventListener('click', getAllCourses);
 
-const url = new URL(window.location.href);
-const token = url.searchParams.get('jwt');
 
-async function getAllCourses(token) {
+async function getAllCourses() {
+    const url = new URL(window.location.href);
+    const token = url.searchParams.get('jwt');
     try {
         const response = await fetch('http://localhost:8080/api/corso/corsi', {
             method: 'GET',
